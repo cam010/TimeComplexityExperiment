@@ -1,0 +1,105 @@
+Aim:
+    To determine which of the algorithms is faster in terms of O():
+    
+    Algorithm 1:
+        Insert a value into an unsorted, keeping it unsorted
+        Find a value in the unsorted list using a linear search
+    
+    Algorithm 2:
+        Insert a value into a sorted list, keeping it sorted
+        Find a value in the sorted list using a binary search
+    
+Method:
+    Repeat with different lengths of starting list: 1, 10, 100, 1000, 10_000, 100_000, 1_000_000, 10_000_000, 100_000_000
+        Repeat 5 times and calculate mean:
+            Run Algorithm 1 and 2 with item to insert and item to find as random element in list
+            Display results in results.txt
+
+Control Variables:
+    Each list will consist of only integers
+    The lists will both have the same integers
+    The lists will both be equal in length to one another
+    The insertion, and locating of the items are exclusive processes
+    The item to insert and the item to find may be the same or different
+    The binary search will favour the leftmost element if there is no middle number
+
+
+Independent Variable:
+    The amount of elements in the list
+
+Dependent Variable:
+    The time taken to insert and locate the items
+
+Python precursary times:
+    Inserting into a list: O(n)
+    Appending onto a list: O(1)
+    Bisect module binary search: O(log n)
+
+Algorithm Time Complexities (post coded):
+    Unordered:
+        Insert (.append()): O(1)
+        Find: O(n)
+    
+    Ordered:
+        Insert (.insert()): O(n)
+        Find: O(log n)
+
+Predictions:
+    I believe that, on average, the unordered will be faster. This
+    is because both have a time complexity in one of the processes 
+    of O(n), however the other (insert) process in the unordered 
+    algorithm is O(1) compared to the slower O(log n) in Ordered
+
+Results:
+    List Length:
+        LENGTH: UNORDERED TIME 2sf (seconds) | ORDERED TIME 2sf (seconds)
+        1: 0.000031 | 0.000024
+        10: 0.000021 | 0.0000074
+        100: 0.0000090 | 0.0000093
+        1000: 0.00015 | 0.000021
+        10_000: 0.0021 | 0.000034
+        100_000: 0.015 | 0.000080
+        1_000_000: 0.15 | 0.00095
+        10_000_000: 1.7 | 0.0087
+        100_000_000: 48 | 0.11
+
+Results Graphs:
+    Unordered in blue (UO), Ordered in Green (O)
+    Time(s) on y, List Length on x
+    LINK TO DESMOS GRAPH: https://www.desmos.com/calculator/fwq1roqjgm
+    Graph 1:
+        Only goes up to 1_000_000 to show smaller points
+    Graph 2:
+        Shows all results
+    Graph 3:
+        Zooms in to show ordered line in more detail
+    Graph 4:
+        Zooms in close on first few lengths of ordered
+    Graph 5:
+        Zooms in close on first few lengths of unordered
+
+Analysis of graphs:
+    Graph 1:
+        This clearly gives the first indication that the unordered algorithm is significantly
+        slower than the ordered. Both graphs appear to be follwing a linear-esque gradient
+    
+    Graph 2:
+        This immediately ruis the linear gradient of the unordered graph, demonstrated by a 
+        sudden, large increase in the gradient
+    
+    Graph 3:
+        This graph shows that the ordered algorithm shares a similar trait to that of the 
+        unordered algorithm, in that the gradient of its graph suddenly increases by a large 
+        amount. Its gradient change is less that that of the unordered, yet still clearly 
+        noticeable
+    Graph 4:
+        This shows a zoomed in image of the first few ordered list lengths. The varied gradients
+        including the drop from 1-10 length suggests that, at a small quantity of elements
+        there is a very similar yet varied time.
+    Graph 5:
+        This shows a similar scenario to graph 4, but with the unordered algorithm. It shows that 
+        at a small number of elements, the time is similar yet varied.
+
+Conclusions:
+    The unordered list algorithm seems to be significantly slower than the ordered list algorithm,
+    contrary to my predictions. [REASONING?]
